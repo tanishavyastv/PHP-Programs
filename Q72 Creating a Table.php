@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
     $servername = "localhost";
@@ -28,4 +29,36 @@
     echo "<br>This program is written by Tanisha Vyas. <br>ERPID: 0221BCA066";
     $conn->close();
         
+=======
+<?php
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "mytv";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    
+    // sql to create table
+    $sql = "CREATE TABLE students (
+    Stud_ID int(11) NOT NULL,
+    Stud_Name varchar(40) NOT NULL,
+    Stud_Email varchar(40) NOT NULL,
+    Stud_Contact char(10) NOT NULL
+    )";
+    
+    if ($conn->query($sql) === TRUE) {
+        echo "Table students created successfully!";
+    } else {
+        echo "Error creating table: " . $conn->error;
+    }
+    echo "<br>This program is written by Tanisha Vyas. <br>ERPID: 0221BCA066";
+    $conn->close();
+        
+>>>>>>> 470d72ba9c4100a1b0f1fc512b607eafc8236196
 ?>
